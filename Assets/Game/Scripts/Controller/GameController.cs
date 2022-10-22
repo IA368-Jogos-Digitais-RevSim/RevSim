@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void GoToScene(string sceneName)
+    public static void GoToScene(string sceneName)
     {
         SceneLoader.Instance.LoadScene(sceneName);
     }
