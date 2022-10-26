@@ -11,7 +11,6 @@ public class NewGameUI : MonoBehaviour
     [SerializeField] private Transform _spawn;
     [SerializeField] private TMP_InputField _playerName;
     [SerializeField] private GameObject _messageError;
-    [SerializeField] private string _startScene = "Base1";
     private GameObject _objectSkin;
 
     void Awake()
@@ -28,7 +27,8 @@ public class NewGameUI : MonoBehaviour
         }
         else
         {
-            GameController.GoToScene(_startScene);
+            PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+            GameController.GoToIntro();
         }
     }
 

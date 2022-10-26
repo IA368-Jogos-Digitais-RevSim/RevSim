@@ -12,7 +12,7 @@ public enum SkinGenre
     FEMALE, MALE
 }
 
-public class PlayerSettings : MonoBehaviour
+public static class PlayerSettings
 {
     private static Dictionary<(SkinRace, SkinGenre), string> _playerSkinResources = new Dictionary<(SkinRace, SkinGenre), string>
     {
@@ -24,14 +24,16 @@ public class PlayerSettings : MonoBehaviour
         {(SkinRace.WHITE, SkinGenre.MALE), @"Characters\Player\Male\Player_Male_White"}
     };
 
-    public PlayerSettings()
-    {
-
-    }
+    public static (SkinRace race, SkinGenre genre) PlayerSkin = (SkinRace.BROWN, SkinGenre.FEMALE);
 
     public static string GetPlayerSkinPath(SkinRace race, SkinGenre genre)
     {
         return _playerSkinResources.GetValueOrDefault((race, genre));
+    }
+
+    public static string GetPlayerSkinPath()
+    {
+        return GetPlayerSkinPath(PlayerSkin.race, PlayerSkin.genre);
     }
 
 }
