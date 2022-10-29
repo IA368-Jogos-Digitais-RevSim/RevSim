@@ -7,8 +7,8 @@ using TMPro;
 public class NewGameUI : MonoBehaviour
 {
     [SerializeField] private SkinRace _playerSkinRace = SkinRace.BROWN;
-    [SerializeField] private SkinGenre _playerSkinGenre = SkinGenre.FEMALE;
-    [SerializeField] private Transform _spawn;
+    [SerializeField] private SkinGenre _playerSkinGenre = SkinGenre.WOMAN;
+    [SerializeField] private Player _player;
     [SerializeField] private TMP_InputField _playerName;
     [SerializeField] private GameObject _messageError;
     private GameObject _objectSkin;
@@ -16,7 +16,8 @@ public class NewGameUI : MonoBehaviour
     void Awake()
     {
         _messageError.SetActive(false);
-        UpdateSkin();
+        PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+        _player.UpdateSkin();
     }
 
     public void CreateGame()
@@ -31,20 +32,14 @@ public class NewGameUI : MonoBehaviour
             GameController.GoToIntro();
         }
     }
-
-    private void UpdateSkin()
-    {
-        string path = PlayerSettings.GetPlayerSkinPath(_playerSkinRace, _playerSkinGenre);
-        Destroy(_objectSkin);
-        _objectSkin = (GameObject)Instantiate(Resources.Load(path), _spawn);
-    }
     
     public void ChangeSkinRace(int value)
     {
         if (value != (int)_playerSkinRace)
         {
             _playerSkinRace = (SkinRace)value;
-            UpdateSkin();
+            PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+            _player.UpdateSkin();
         }
     }
 
@@ -53,7 +48,8 @@ public class NewGameUI : MonoBehaviour
         if (value != (int)_playerSkinGenre)
         {
             _playerSkinGenre = (SkinGenre)value;
-            UpdateSkin();
+            PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+            _player.UpdateSkin();
         }
     }
 }

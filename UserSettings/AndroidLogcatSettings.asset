@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RX8M80XKATP",
         "name": "com.IA368.RevSim",
-        "processId": 29260,
+        "processId": 15351,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -30,6 +30,18 @@
             "deviceId": "RX8M80XKATP",
             "name": "com.IA368.RevSim",
             "processId": 29260,
+            "exited": false
+        },
+        {
+            "deviceId": "RX8M80XKATP",
+            "name": "com.IA368.RevSim",
+            "processId": 13383,
+            "exited": false
+        },
+        {
+            "deviceId": "RX8M80XKATP",
+            "name": "com.IA368.RevSim",
+            "processId": 15351,
             "exited": false
         }
     ],
