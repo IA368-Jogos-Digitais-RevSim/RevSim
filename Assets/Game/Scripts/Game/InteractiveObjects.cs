@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class InteractiveObjects : MonoBehaviour
 {
+    [Header("Controller")]
+    [SerializeField] private InteractiveController _interactiveController;
+
     [Header("Immediate action")]
     [SerializeField] private GameObject[] _activate;
     [SerializeField] private GameObject[] _disable;
@@ -13,13 +17,21 @@ public class InteractiveObjects : MonoBehaviour
     [SerializeField] private GameObject[] _activateAfterTime;
     [SerializeField] private GameObject[] _disableAfterTime;
 
+    private Outline _outline;
     private bool _mouseEnter = false;
     private bool _waiting = false;
+
+    void Awake()
+    {
+        _outline = GetComponent<Outline>();
+    }
 
     void Update()
     {
         if (_mouseEnter) {
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) && _outline.enabled) {
+                _mouseEnter = false;
+                _interactiveController.EnableOutlines(false);
                 Action(_activate, _disable);
                 if (!_waiting)
                     StartCoroutine(WaitTimeAction(_activateAfterTime, _disableAfterTime));
@@ -35,6 +47,11 @@ public class InteractiveObjects : MonoBehaviour
     void OnMouseExit()
     {
         _mouseEnter = false;
+    }
+
+    public void EnableOutline(bool enable)
+    {
+        _outline.enabled = enable;
     }
 
     private void Action(GameObject[] activateObjects, GameObject[] disableObjects)

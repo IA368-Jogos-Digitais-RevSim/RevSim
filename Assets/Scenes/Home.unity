@@ -312,7 +312,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7300768280166920736}
         m_TargetAssemblyTypeName: NewGameUI, Assembly-CSharp
-        m_MethodName: ChangeSkinGenre
+        m_MethodName: ChangeGenre
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6116,7 +6116,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7300768280166920736}
         m_TargetAssemblyTypeName: NewGameUI, Assembly-CSharp
-        m_MethodName: ChangeSkinGenre
+        m_MethodName: ChangeGenre
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6325,7 +6325,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7300768280166920736}
         m_TargetAssemblyTypeName: NewGameUI, Assembly-CSharp
-        m_MethodName: ChangeSkinRace
+        m_MethodName: ChangeRace
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18882,7 +18882,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7300768280166920736}
         m_TargetAssemblyTypeName: NewGameUI, Assembly-CSharp
-        m_MethodName: ChangeSkinRace
+        m_MethodName: ChangeRace
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19130,7 +19130,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7300768280166920736}
         m_TargetAssemblyTypeName: NewGameUI, Assembly-CSharp
-        m_MethodName: ChangeSkinRace
+        m_MethodName: ChangeRace
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20992,8 +20992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7275268550487374f8ded9307432532b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSkinRace: 1
-  _playerSkinGenre: 0
+  _playerRace: 1
+  _playerGenre: 0
   _player: {fileID: 674894852}
   _playerName: {fileID: 1639476684470516046}
   _messageError: {fileID: 1639476684257998146}

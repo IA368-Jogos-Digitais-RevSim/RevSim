@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Skin;
 
 public class NewGameUI : MonoBehaviour
 {
-    [SerializeField] private SkinRace _playerSkinRace = SkinRace.BROWN;
-    [SerializeField] private SkinGenre _playerSkinGenre = SkinGenre.WOMAN;
+    [SerializeField] private Race _playerRace = Race.BROWN;
+    [SerializeField] private Genre _playerGenre = Genre.WOMAN;
     [SerializeField] private Player _player;
     [SerializeField] private TMP_InputField _playerName;
     [SerializeField] private GameObject _messageError;
@@ -16,7 +17,7 @@ public class NewGameUI : MonoBehaviour
     void Awake()
     {
         _messageError.SetActive(false);
-        PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+        PlayerSettings.PlayerSkin = (_playerRace, _playerGenre);
         _player.UpdateSkin();
     }
 
@@ -28,27 +29,27 @@ public class NewGameUI : MonoBehaviour
         }
         else
         {
-            PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+            PlayerSettings.PlayerSkin = (_playerRace, _playerGenre);
             GameController.GoToIntro();
         }
     }
     
-    public void ChangeSkinRace(int value)
+    public void ChangeRace(int value)
     {
-        if (value != (int)_playerSkinRace)
+        if (value != (int)_playerRace)
         {
-            _playerSkinRace = (SkinRace)value;
-            PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+            _playerRace = (Race)value;
+            PlayerSettings.PlayerSkin = (_playerRace, _playerGenre);
             _player.UpdateSkin();
         }
     }
 
-    public void ChangeSkinGenre(int value)
+    public void ChangeGenre(int value)
     {
-        if (value != (int)_playerSkinGenre)
+        if (value != (int)_playerGenre)
         {
-            _playerSkinGenre = (SkinGenre)value;
-            PlayerSettings.PlayerSkin = (_playerSkinRace, _playerSkinGenre);
+            _playerGenre = (Genre)value;
+            PlayerSettings.PlayerSkin = (_playerRace, _playerGenre);
             _player.UpdateSkin();
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Skin;
 
 [RequireComponent(typeof(Animator))]
 //[RequireComponent(typeof(CharacterController))]
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour
         string materialPath = PlayerSettings.GetPlayerMaterialPath();
 
         _meshBase.material = Resources.Load<Material>(materialPath);
-        if (PlayerSettings.PlayerSkin.genre == SkinGenre.MAN)
+        if (PlayerSettings.PlayerSkin.genre == Genre.MAN)
         {
             _meshMan.SetActive(true);
             _meshWoman.SetActive(false);
@@ -69,7 +70,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == ((int)Layers.OBSTACLE))
+        if (collision.gameObject.layer != ((int)Layers.GROUND))
         {
             _target = transform.position;
         }
