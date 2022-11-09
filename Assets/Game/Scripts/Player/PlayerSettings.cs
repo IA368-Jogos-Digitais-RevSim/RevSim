@@ -1,34 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public enum SkinRace
-{
-    BLACK, BROWN, WHITE
-}
-
-public enum SkinGenre
-{
-    WOMAN, MAN
-}
+using Skin;
 
 public static class PlayerSettings
 {
     public const string PLAYER_RESOURCE = @"Characters\Player\Player";
 
-    private static Dictionary<(SkinRace, SkinGenre), string> _playerMaterialPath = new Dictionary<(SkinRace, SkinGenre), string>
+    private static Dictionary<(Race, Genre), string> _playerMaterialPath = new Dictionary<(Race, Genre), string>
     {
-        {(SkinRace.BLACK, SkinGenre.WOMAN), @"Characters\Player\Materials\Player_Woman_Black"},
-        {(SkinRace.BROWN, SkinGenre.WOMAN), @"Characters\Player\Materials\Player_Woman_Brown"},
-        {(SkinRace.WHITE, SkinGenre.WOMAN), @"Characters\Player\Materials\Player_Woman_White"},
-        {(SkinRace.BLACK, SkinGenre.MAN), @"Characters\Player\Materials\Player_Man_Black"},
-        {(SkinRace.BROWN, SkinGenre.MAN), @"Characters\Player\Materials\Player_Man_Brown"},
-        {(SkinRace.WHITE, SkinGenre.MAN), @"Characters\Player\Materials\Player_Man_White"}
+        {(Race.BLACK, Genre.WOMAN), @"Characters\Player\Materials\Player_Woman_Black"},
+        {(Race.BROWN, Genre.WOMAN), @"Characters\Player\Materials\Player_Woman_Brown"},
+        {(Race.WHITE, Genre.WOMAN), @"Characters\Player\Materials\Player_Woman_White"},
+        {(Race.BLACK, Genre.MAN), @"Characters\Player\Materials\Player_Man_Black"},
+        {(Race.BROWN, Genre.MAN), @"Characters\Player\Materials\Player_Man_Brown"},
+        {(Race.WHITE, Genre.MAN), @"Characters\Player\Materials\Player_Man_White"}
     };
 
-    public static (SkinRace race, SkinGenre genre) PlayerSkin = (SkinRace.BROWN, SkinGenre.WOMAN);
+    public static (Race race, Genre genre) PlayerSkin = (Race.BROWN, Genre.WOMAN);
 
-    public static string GetPlayerMaterialPath(SkinRace race, SkinGenre genre)
+    public static string GetPlayerMaterialPath(Race race, Genre genre)
     {
         return _playerMaterialPath.GetValueOrDefault((race, genre));
     }

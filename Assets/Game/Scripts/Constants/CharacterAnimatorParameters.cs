@@ -5,4 +5,5 @@ public static class CharacterAnimatorParameters
     public const string SPEED = "Speed_f";
     public const string JUMP = "Jump_b";
     public const string DEATH = "Death_b";
+    public const string SITTING = "Sitting_b";
 }
