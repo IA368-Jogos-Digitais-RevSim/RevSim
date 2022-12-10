@@ -14,10 +14,17 @@ public class Character : MonoBehaviour
     [SerializeField] private GameObject _meshParliamentary;
     [SerializeField] private GameObject _meshProgrammer;
     [SerializeField] private GameObject _meshWorker;
+    [SerializeField] private float _minDistanceToMove = 0.5f;
+    [SerializeField] private float _speed = 10;
 
     [SerializeField] private Classe _classe = Classe.ACTIVIST;
     [SerializeField] private bool _sitting = false;
+    
+    [SerializeField] public string Description { get; private set; }
+    [SerializeField] public float CostMoney { get; private set; }
+    [SerializeField] public float PowerGain { get; private set; }
 
+    private bool _isMoving = false;
     private Animator _animator;
     
     void Awake()
@@ -25,6 +32,11 @@ public class Character : MonoBehaviour
         _animator = GetComponent<Animator>();
         _animator.SetBool(CharacterAnimatorParameters.SITTING, _sitting);
         UpdateSkin();
+    }
+
+    public void GoToTarget(Vector3 target)
+    {
+        transform.position = target;
     }
 
     public void GoToChair(Vector3 target)
@@ -83,15 +95,5 @@ public class Character : MonoBehaviour
                 _meshWorker.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(materialPath);
                 break;
         }
-    }
-
-    void FixedUpdate()
-    {
-
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-
     }
 }

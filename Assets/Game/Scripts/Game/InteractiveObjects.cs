@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Outline))]
 public class InteractiveObjects : MonoBehaviour
@@ -9,13 +10,11 @@ public class InteractiveObjects : MonoBehaviour
     [SerializeField] private InteractiveController _interactiveController;
 
     [Header("Immediate action")]
-    [SerializeField] private GameObject[] _activate;
-    [SerializeField] private GameObject[] _disable;
+    [SerializeField] private UnityEvent _onImmediateAction;
 
     [Header("Wait time for action")]
     [SerializeField] private float _waitTime = 0.5f;
-    [SerializeField] private GameObject[] _activateAfterTime;
-    [SerializeField] private GameObject[] _disableAfterTime;
+    [SerializeField] private UnityEvent _onActionAfterTime;
 
     private Outline _outline;
     private bool _mouseEnter = false;
@@ -32,9 +31,9 @@ public class InteractiveObjects : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && _outline.enabled) {
                 _mouseEnter = false;
                 _interactiveController.EnableOutlines(false);
-                Action(_activate, _disable);
+                _onImmediateAction.Invoke();
                 if (!_waiting)
-                    StartCoroutine(WaitTimeAction(_activateAfterTime, _disableAfterTime));
+                    StartCoroutine(WaitTimeAction());
             }
         }
     }
@@ -54,21 +53,11 @@ public class InteractiveObjects : MonoBehaviour
         _outline.enabled = enable;
     }
 
-    private void Action(GameObject[] activateObjects, GameObject[] disableObjects)
-    {
-        foreach (GameObject obj in activateObjects) {
-            obj.SetActive(true);
-        }
-        foreach (GameObject obj in disableObjects) {
-            obj.SetActive(false);
-        }
-    }
-
-    private IEnumerator WaitTimeAction(GameObject[] activateAfterTimeObjects, GameObject[] disableAfterTimeObjects)
+    private IEnumerator WaitTimeAction()
     {
         _waiting = true;
         yield return new WaitForSeconds(_waitTime);
-        Action(activateAfterTimeObjects, disableAfterTimeObjects);
+        _onActionAfterTime.Invoke();
         _waiting = false;
     }
 }
