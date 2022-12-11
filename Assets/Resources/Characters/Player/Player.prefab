@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 400000}
   - component: {fileID: 9500000}
-  - component: {fileID: -92834053832510375}
   - component: {fileID: 3294482503894597076}
+  - component: {fileID: 6438579780403075261}
+  - component: {fileID: 3453209026650521183}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -58,24 +59,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &-92834053832510375
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 3
-  m_Radius: 0.75
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.45, z: 0}
 --- !u!114 &3294482503894597076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,11 +71,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864a216708921824bbe453b9cc6b88f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minDistanceToMove: 0.5
-  _speed: 8
   _meshBase: {fileID: 13700000}
   _meshMan: {fileID: 100060}
   _meshWoman: {fileID: 100066}
+--- !u!65 &6438579780403075261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3886337, y: 3.241085, z: 1.0899782}
+  m_Center: {x: -0.028087616, y: 1.1205425, z: -0.04498911}
+--- !u!195 &3453209026650521183
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.85
+  m_Speed: 15
+  m_Acceleration: 10
+  avoidancePriority: 50
+  m_AngularSpeed: 150
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 3
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0

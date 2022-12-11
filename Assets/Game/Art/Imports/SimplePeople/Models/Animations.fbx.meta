@@ -1,185 +1,533 @@
 fileFormatVersion: 2
 guid: 4dc1a999b3d9240418f7b4a18e99bba9
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Body_jnt
-    100004: Foot_Left_jnt
-    100006: Foot_Left_jnt1
-    100008: Foot_Right_jnt
-    100010: Foot_Right_jnt1
-    100012: Hand_Left_jnt
-    100014: Hand_Right_jnt
-    100016: Hat_jnt
-    100018: Hat_jnt1
-    100020: Head_jnt
-    100022: Hips_jnt
-    100024: LowerArm_Left_jnt
-    100026: LowerArm_Right_jnt
-    100028: LowerLeg_Left_jnt
-    100030: LowerLeg_Right_jnt
-    100032: Root_jnt
-    100034: Spine_jnt
-    100036: UpperArm_Left_jnt
-    100038: UpperArm_Right_jnt
-    100040: UpperLeg_Left_jnt
-    100042: UpperLeg_Right_jnt
-    100044: Body
-    100046: Foot_Left
-    100048: Foot_Right
-    100050: Hand_Left
-    100052: Hand_Right
-    100054: Head
-    100056: LowerArm_Left
-    100058: LowerArm_Right
-    100060: LowerBody
-    100062: LowerLeg_Left
-    100064: LowerLeg_Right
-    100066: Prop_FireFighterPack
-    100068: UpperArm_Left
-    100070: UpperArm_Left24
-    100072: UpperArm_Left25
-    100074: UpperArm_Right
-    100076: UpperArm_Right23
-    100078: UpperArm_Right24
-    100080: UpperLeg_Left
-    100082: UpperLeg_Right
-    100084: Weapon_Shield
-    100086: Weapon_Sword
-    400000: //RootNode
-    400002: Body_jnt
-    400004: Foot_Left_jnt
-    400006: Foot_Left_jnt1
-    400008: Foot_Right_jnt
-    400010: Foot_Right_jnt1
-    400012: Hand_Left_jnt
-    400014: Hand_Right_jnt
-    400016: Hat_jnt
-    400018: Hat_jnt1
-    400020: Head_jnt
-    400022: Hips_jnt
-    400024: LowerArm_Left_jnt
-    400026: LowerArm_Right_jnt
-    400028: LowerLeg_Left_jnt
-    400030: LowerLeg_Right_jnt
-    400032: Root_jnt
-    400034: Spine_jnt
-    400036: UpperArm_Left_jnt
-    400038: UpperArm_Right_jnt
-    400040: UpperLeg_Left_jnt
-    400042: UpperLeg_Right_jnt
-    400044: Body
-    400046: Foot_Left
-    400048: Foot_Right
-    400050: Hand_Left
-    400052: Hand_Right
-    400054: Head
-    400056: LowerArm_Left
-    400058: LowerArm_Right
-    400060: LowerBody
-    400062: LowerLeg_Left
-    400064: LowerLeg_Right
-    400066: Prop_FireFighterPack
-    400068: UpperArm_Left
-    400070: UpperArm_Left24
-    400072: UpperArm_Left25
-    400074: UpperArm_Right
-    400076: UpperArm_Right23
-    400078: UpperArm_Right24
-    400080: UpperLeg_Left
-    400082: UpperLeg_Right
-    400084: Weapon_Shield
-    400086: Weapon_Sword
-    2300000: Body
-    2300002: Foot_Left
-    2300004: Foot_Right
-    2300006: Hand_Left
-    2300008: Hand_Right
-    2300010: Head
-    2300012: LowerArm_Left
-    2300014: LowerArm_Right
-    2300016: LowerBody
-    2300018: LowerLeg_Left
-    2300020: LowerLeg_Right
-    2300022: Prop_FireFighterPack
-    2300024: UpperArm_Left
-    2300026: UpperArm_Left24
-    2300028: UpperArm_Left25
-    2300030: UpperArm_Right
-    2300032: UpperArm_Right23
-    2300034: UpperArm_Right24
-    2300036: UpperLeg_Left
-    2300038: UpperLeg_Right
-    2300040: Weapon_Shield
-    2300042: Weapon_Sword
-    3300000: Body
-    3300002: Foot_Left
-    3300004: Foot_Right
-    3300006: Hand_Left
-    3300008: Hand_Right
-    3300010: Head
-    3300012: LowerArm_Left
-    3300014: LowerArm_Right
-    3300016: LowerBody
-    3300018: LowerLeg_Left
-    3300020: LowerLeg_Right
-    3300022: Prop_FireFighterPack
-    3300024: UpperArm_Left
-    3300026: UpperArm_Left24
-    3300028: UpperArm_Left25
-    3300030: UpperArm_Right
-    3300032: UpperArm_Right23
-    3300034: UpperArm_Right24
-    3300036: UpperLeg_Left
-    3300038: UpperLeg_Right
-    3300040: Weapon_Shield
-    3300042: Weapon_Sword
-    4300000: Foot_Left
-    4300002: LowerLeg_Left
-    4300004: UpperLeg_Left
-    4300006: Foot_Right
-    4300008: LowerLeg_Right
-    4300010: UpperLeg_Right
-    4300012: Head
-    4300014: Hand_Right
-    4300016: Weapon_Sword
-    4300018: LowerArm_Right
-    4300020: UpperArm_Right
-    4300022: UpperArm_Left24
-    4300024: UpperArm_Right23
-    4300026: Hand_Left
-    4300028: Weapon_Shield
-    4300030: LowerArm_Left
-    4300032: UpperArm_Left
-    4300034: UpperArm_Right24
-    4300036: UpperArm_Left25
-    4300038: Body
-    4300040: Prop_FireFighterPack
-    4300042: LowerBody
-    7400000: Idle
-    7400002: Walking
-    7400004: Running
-    7400006: Idle_SittingOnGround
-    7400008: Idle_Wave
-    7400010: Idle_CheckTime
-    7400012: Idle_WipeMouth
-    7400014: Running_Jump
-    7400016: Death_01
-    7400018: Idle_LeaningAgainstWall
-    7400020: Idle_Smoking
-    7400022: Idle_SexyDance
-    7400024: Falling
-    7400026: Standing_Jump
-    7400028: CrossArms
-    7400030: HandsOnHips
-    7400032: Idle_HandsOnHips
-    7400034: Idle_CrossedArms
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Body_jnt
+  - first:
+      1: 100004
+    second: Foot_Left_jnt
+  - first:
+      1: 100006
+    second: Foot_Left_jnt1
+  - first:
+      1: 100008
+    second: Foot_Right_jnt
+  - first:
+      1: 100010
+    second: Foot_Right_jnt1
+  - first:
+      1: 100012
+    second: Hand_Left_jnt
+  - first:
+      1: 100014
+    second: Hand_Right_jnt
+  - first:
+      1: 100016
+    second: Hat_jnt
+  - first:
+      1: 100018
+    second: Hat_jnt1
+  - first:
+      1: 100020
+    second: Head_jnt
+  - first:
+      1: 100022
+    second: Hips_jnt
+  - first:
+      1: 100024
+    second: LowerArm_Left_jnt
+  - first:
+      1: 100026
+    second: LowerArm_Right_jnt
+  - first:
+      1: 100028
+    second: LowerLeg_Left_jnt
+  - first:
+      1: 100030
+    second: LowerLeg_Right_jnt
+  - first:
+      1: 100032
+    second: Root_jnt
+  - first:
+      1: 100034
+    second: Spine_jnt
+  - first:
+      1: 100036
+    second: UpperArm_Left_jnt
+  - first:
+      1: 100038
+    second: UpperArm_Right_jnt
+  - first:
+      1: 100040
+    second: UpperLeg_Left_jnt
+  - first:
+      1: 100042
+    second: UpperLeg_Right_jnt
+  - first:
+      1: 100044
+    second: Body
+  - first:
+      1: 100046
+    second: Foot_Left
+  - first:
+      1: 100048
+    second: Foot_Right
+  - first:
+      1: 100050
+    second: Hand_Left
+  - first:
+      1: 100052
+    second: Hand_Right
+  - first:
+      1: 100054
+    second: Head
+  - first:
+      1: 100056
+    second: LowerArm_Left
+  - first:
+      1: 100058
+    second: LowerArm_Right
+  - first:
+      1: 100060
+    second: LowerBody
+  - first:
+      1: 100062
+    second: LowerLeg_Left
+  - first:
+      1: 100064
+    second: LowerLeg_Right
+  - first:
+      1: 100066
+    second: Prop_FireFighterPack
+  - first:
+      1: 100068
+    second: UpperArm_Left
+  - first:
+      1: 100070
+    second: UpperArm_Left24
+  - first:
+      1: 100072
+    second: UpperArm_Left25
+  - first:
+      1: 100074
+    second: UpperArm_Right
+  - first:
+      1: 100076
+    second: UpperArm_Right23
+  - first:
+      1: 100078
+    second: UpperArm_Right24
+  - first:
+      1: 100080
+    second: UpperLeg_Left
+  - first:
+      1: 100082
+    second: UpperLeg_Right
+  - first:
+      1: 100084
+    second: Weapon_Shield
+  - first:
+      1: 100086
+    second: Weapon_Sword
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Body_jnt
+  - first:
+      4: 400004
+    second: Foot_Left_jnt
+  - first:
+      4: 400006
+    second: Foot_Left_jnt1
+  - first:
+      4: 400008
+    second: Foot_Right_jnt
+  - first:
+      4: 400010
+    second: Foot_Right_jnt1
+  - first:
+      4: 400012
+    second: Hand_Left_jnt
+  - first:
+      4: 400014
+    second: Hand_Right_jnt
+  - first:
+      4: 400016
+    second: Hat_jnt
+  - first:
+      4: 400018
+    second: Hat_jnt1
+  - first:
+      4: 400020
+    second: Head_jnt
+  - first:
+      4: 400022
+    second: Hips_jnt
+  - first:
+      4: 400024
+    second: LowerArm_Left_jnt
+  - first:
+      4: 400026
+    second: LowerArm_Right_jnt
+  - first:
+      4: 400028
+    second: LowerLeg_Left_jnt
+  - first:
+      4: 400030
+    second: LowerLeg_Right_jnt
+  - first:
+      4: 400032
+    second: Root_jnt
+  - first:
+      4: 400034
+    second: Spine_jnt
+  - first:
+      4: 400036
+    second: UpperArm_Left_jnt
+  - first:
+      4: 400038
+    second: UpperArm_Right_jnt
+  - first:
+      4: 400040
+    second: UpperLeg_Left_jnt
+  - first:
+      4: 400042
+    second: UpperLeg_Right_jnt
+  - first:
+      4: 400044
+    second: Body
+  - first:
+      4: 400046
+    second: Foot_Left
+  - first:
+      4: 400048
+    second: Foot_Right
+  - first:
+      4: 400050
+    second: Hand_Left
+  - first:
+      4: 400052
+    second: Hand_Right
+  - first:
+      4: 400054
+    second: Head
+  - first:
+      4: 400056
+    second: LowerArm_Left
+  - first:
+      4: 400058
+    second: LowerArm_Right
+  - first:
+      4: 400060
+    second: LowerBody
+  - first:
+      4: 400062
+    second: LowerLeg_Left
+  - first:
+      4: 400064
+    second: LowerLeg_Right
+  - first:
+      4: 400066
+    second: Prop_FireFighterPack
+  - first:
+      4: 400068
+    second: UpperArm_Left
+  - first:
+      4: 400070
+    second: UpperArm_Left24
+  - first:
+      4: 400072
+    second: UpperArm_Left25
+  - first:
+      4: 400074
+    second: UpperArm_Right
+  - first:
+      4: 400076
+    second: UpperArm_Right23
+  - first:
+      4: 400078
+    second: UpperArm_Right24
+  - first:
+      4: 400080
+    second: UpperLeg_Left
+  - first:
+      4: 400082
+    second: UpperLeg_Right
+  - first:
+      4: 400084
+    second: Weapon_Shield
+  - first:
+      4: 400086
+    second: Weapon_Sword
+  - first:
+      23: 2300000
+    second: Body
+  - first:
+      23: 2300002
+    second: Foot_Left
+  - first:
+      23: 2300004
+    second: Foot_Right
+  - first:
+      23: 2300006
+    second: Hand_Left
+  - first:
+      23: 2300008
+    second: Hand_Right
+  - first:
+      23: 2300010
+    second: Head
+  - first:
+      23: 2300012
+    second: LowerArm_Left
+  - first:
+      23: 2300014
+    second: LowerArm_Right
+  - first:
+      23: 2300016
+    second: LowerBody
+  - first:
+      23: 2300018
+    second: LowerLeg_Left
+  - first:
+      23: 2300020
+    second: LowerLeg_Right
+  - first:
+      23: 2300022
+    second: Prop_FireFighterPack
+  - first:
+      23: 2300024
+    second: UpperArm_Left
+  - first:
+      23: 2300026
+    second: UpperArm_Left24
+  - first:
+      23: 2300028
+    second: UpperArm_Left25
+  - first:
+      23: 2300030
+    second: UpperArm_Right
+  - first:
+      23: 2300032
+    second: UpperArm_Right23
+  - first:
+      23: 2300034
+    second: UpperArm_Right24
+  - first:
+      23: 2300036
+    second: UpperLeg_Left
+  - first:
+      23: 2300038
+    second: UpperLeg_Right
+  - first:
+      23: 2300040
+    second: Weapon_Shield
+  - first:
+      23: 2300042
+    second: Weapon_Sword
+  - first:
+      33: 3300000
+    second: Body
+  - first:
+      33: 3300002
+    second: Foot_Left
+  - first:
+      33: 3300004
+    second: Foot_Right
+  - first:
+      33: 3300006
+    second: Hand_Left
+  - first:
+      33: 3300008
+    second: Hand_Right
+  - first:
+      33: 3300010
+    second: Head
+  - first:
+      33: 3300012
+    second: LowerArm_Left
+  - first:
+      33: 3300014
+    second: LowerArm_Right
+  - first:
+      33: 3300016
+    second: LowerBody
+  - first:
+      33: 3300018
+    second: LowerLeg_Left
+  - first:
+      33: 3300020
+    second: LowerLeg_Right
+  - first:
+      33: 3300022
+    second: Prop_FireFighterPack
+  - first:
+      33: 3300024
+    second: UpperArm_Left
+  - first:
+      33: 3300026
+    second: UpperArm_Left24
+  - first:
+      33: 3300028
+    second: UpperArm_Left25
+  - first:
+      33: 3300030
+    second: UpperArm_Right
+  - first:
+      33: 3300032
+    second: UpperArm_Right23
+  - first:
+      33: 3300034
+    second: UpperArm_Right24
+  - first:
+      33: 3300036
+    second: UpperLeg_Left
+  - first:
+      33: 3300038
+    second: UpperLeg_Right
+  - first:
+      33: 3300040
+    second: Weapon_Shield
+  - first:
+      33: 3300042
+    second: Weapon_Sword
+  - first:
+      43: 4300000
+    second: Foot_Left
+  - first:
+      43: 4300002
+    second: LowerLeg_Left
+  - first:
+      43: 4300004
+    second: UpperLeg_Left
+  - first:
+      43: 4300006
+    second: Foot_Right
+  - first:
+      43: 4300008
+    second: LowerLeg_Right
+  - first:
+      43: 4300010
+    second: UpperLeg_Right
+  - first:
+      43: 4300012
+    second: Head
+  - first:
+      43: 4300014
+    second: Hand_Right
+  - first:
+      43: 4300016
+    second: Weapon_Sword
+  - first:
+      43: 4300018
+    second: LowerArm_Right
+  - first:
+      43: 4300020
+    second: UpperArm_Right
+  - first:
+      43: 4300022
+    second: UpperArm_Left24
+  - first:
+      43: 4300024
+    second: UpperArm_Right23
+  - first:
+      43: 4300026
+    second: Hand_Left
+  - first:
+      43: 4300028
+    second: Weapon_Shield
+  - first:
+      43: 4300030
+    second: LowerArm_Left
+  - first:
+      43: 4300032
+    second: UpperArm_Left
+  - first:
+      43: 4300034
+    second: UpperArm_Right24
+  - first:
+      43: 4300036
+    second: UpperArm_Left25
+  - first:
+      43: 4300038
+    second: Body
+  - first:
+      43: 4300040
+    second: Prop_FireFighterPack
+  - first:
+      43: 4300042
+    second: LowerBody
+  - first:
+      74: 7400000
+    second: Idle
+  - first:
+      74: 7400002
+    second: Walking
+  - first:
+      74: 7400004
+    second: Running
+  - first:
+      74: 7400006
+    second: Idle_SittingOnGround
+  - first:
+      74: 7400008
+    second: Idle_Wave
+  - first:
+      74: 7400010
+    second: Idle_CheckTime
+  - first:
+      74: 7400012
+    second: Idle_WipeMouth
+  - first:
+      74: 7400014
+    second: Running_Jump
+  - first:
+      74: 7400016
+    second: Death_01
+  - first:
+      74: 7400018
+    second: Idle_LeaningAgainstWall
+  - first:
+      74: 7400020
+    second: Idle_Smoking
+  - first:
+      74: 7400022
+    second: Idle_SexyDance
+  - first:
+      74: 7400024
+    second: Falling
+  - first:
+      74: 7400026
+    second: Standing_Jump
+  - first:
+      74: 7400028
+    second: CrossArms
+  - first:
+      74: 7400030
+    second: HandsOnHips
+  - first:
+      74: 7400032
+    second: Idle_HandsOnHips
+  - first:
+      74: 7400034
+    second: Idle_CrossedArms
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -188,14 +536,15 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'Body_jnt' has translation animation that will
-      be discarded.\n"
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Body_jnt' has translation animation that
+      will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -211,6 +560,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
+      internalID: 0
       firstFrame: 2
       lastFrame: 49
       wrapMode: 0
@@ -239,6 +589,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Walking
       takeName: Take 001
+      internalID: 0
       firstFrame: 52
       lastFrame: 79
       wrapMode: 0
@@ -251,7 +602,7 @@ ModelImporter:
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -267,6 +618,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Running
       takeName: Take 001
+      internalID: 0
       firstFrame: 82
       lastFrame: 100
       wrapMode: 0
@@ -279,7 +631,7 @@ ModelImporter:
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -295,6 +647,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_SittingOnGround
       takeName: Take 001
+      internalID: 0
       firstFrame: 117
       lastFrame: 146
       wrapMode: 0
@@ -323,6 +676,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_Wave
       takeName: Take 001
+      internalID: 0
       firstFrame: 322
       lastFrame: 378
       wrapMode: 0
@@ -351,6 +705,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_CheckTime
       takeName: Take 001
+      internalID: 0
       firstFrame: 381
       lastFrame: 420
       wrapMode: 0
@@ -379,6 +734,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_WipeMouth
       takeName: Take 001
+      internalID: 0
       firstFrame: 423
       lastFrame: 460
       wrapMode: 0
@@ -407,6 +763,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Running_Jump
       takeName: Take 001
+      internalID: 0
       firstFrame: 461
       lastFrame: 491
       wrapMode: 0
@@ -435,6 +792,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Death_01
       takeName: Take 001
+      internalID: 0
       firstFrame: 492
       lastFrame: 547
       wrapMode: 0
@@ -463,6 +821,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_LeaningAgainstWall
       takeName: Take 001
+      internalID: 0
       firstFrame: 662
       lastFrame: 709
       wrapMode: 0
@@ -491,6 +850,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_Smoking
       takeName: Take 001
+      internalID: 0
       firstFrame: 610
       lastFrame: 660
       wrapMode: 0
@@ -519,6 +879,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_SexyDance
       takeName: Take 001
+      internalID: 0
       firstFrame: 712
       lastFrame: 770
       wrapMode: 0
@@ -547,6 +908,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Falling
       takeName: Take 001
+      internalID: 0
       firstFrame: 550
       lastFrame: 579
       wrapMode: 0
@@ -575,6 +937,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Standing_Jump
       takeName: Take 001
+      internalID: 0
       firstFrame: 582
       lastFrame: 608
       wrapMode: 0
@@ -603,6 +966,7 @@ ModelImporter:
     - serializedVersion: 16
       name: CrossArms
       takeName: Take 001
+      internalID: 0
       firstFrame: 781
       lastFrame: 850
       wrapMode: 0
@@ -631,6 +995,7 @@ ModelImporter:
     - serializedVersion: 16
       name: HandsOnHips
       takeName: Take 001
+      internalID: 0
       firstFrame: 851
       lastFrame: 900
       wrapMode: 0
@@ -659,6 +1024,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_HandsOnHips
       takeName: Take 001
+      internalID: 0
       firstFrame: 865
       lastFrame: 889
       wrapMode: 0
@@ -687,6 +1053,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle_CrossedArms
       takeName: Take 001
+      internalID: 0
       firstFrame: 800
       lastFrame: 840
       wrapMode: 0
@@ -718,34 +1085,47 @@ ModelImporter:
     globalScale: 0.01
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
     tangentImportMode: 1
     normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: Hips_jnt
       humanName: Hips
@@ -986,14 +1366,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c72c97e952bf7834b85e6164373d310d,
     type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 1
   userData: 
   assetBundleName: 

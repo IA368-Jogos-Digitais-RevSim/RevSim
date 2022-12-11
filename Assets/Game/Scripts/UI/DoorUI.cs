@@ -19,7 +19,7 @@ public class DoorUI : MonoBehaviour
         if (character != null)
         {
             _descriptionText.text = character.Description;
-            _classeText.text = character.Description;
+            _classeText.text = character.Classe.ToDescriptionString();
             _costMoneyText.text = character.CostMoney.ToString();
             _powerGainText.text = character.PowerGain.ToString();
             _panel.SetActive(true);

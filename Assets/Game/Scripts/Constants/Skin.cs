@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Skin
 {
     public enum Race
@@ -12,7 +14,26 @@ namespace Skin
 
     public enum Classe
     {
-        ACTIVIST, COMMUNICATOR, DOCTOR, NEGOTIATOR, PARLIAMENTARY, PROGRAMMER, WORKER
+        [Description("Ativista")]
+        ACTIVIST, 
+
+        [Description("Comunicador")]
+        COMMUNICATOR, 
+
+        [Description("Médico")]
+        DOCTOR, 
+
+        [Description("Negociador")]
+        NEGOTIATOR, 
+
+        [Description("Parlamentar")]
+        PARLIAMENTARY, 
+
+        [Description("Programador")]
+        PROGRAMMER, 
+
+        [Description("Trabalhador")]
+        WORKER
     }
 }
 

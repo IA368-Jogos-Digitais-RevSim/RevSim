@@ -8,17 +8,17 @@ public class MembersManager : MonoBehaviour
     [SerializeField] private Character[] _firstMembers;
     [SerializeField] private Transform[] _positions;
 
-    private List<Character> _members;
+    public List<Character> Members { get; private set; }
 
     void Awake()
     {
-        _members = new List<Character>(_firstMembers);
+        Members = new List<Character>(_firstMembers);
         UpdatePositions();
     }
 
     public void AddMember(Character character)
     {
-        _members.Add(character);
+        Members.Add(character);
         UpdatePositions();
     }
 
@@ -26,9 +26,9 @@ public class MembersManager : MonoBehaviour
     {
         for (int i = 0; i < _positions.Length; i++)
         {
-            if (_members.Count() >= i+1)
+            if (Members.Count() >= i+1)
             {
-                _members[i].GoToChair(_positions[i].position);
+                Members[i].GoToChair(_positions[i].position);
             }
         }
     }

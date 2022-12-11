@@ -2,38 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Skin;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Animator))]
-//[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _minDistanceToMove = 0.5f;
-    [SerializeField] private float _speed = 10;
     [SerializeField] private SkinnedMeshRenderer _meshBase;
     [SerializeField] private GameObject _meshMan;
     [SerializeField] private GameObject _meshWoman;
 
     private Animator _animator;
-    //private CharacterController _controller;
     private bool _isMoving = false;
     private RaycastHit _hit;
-    private Vector3 _target;
+    private NavMeshAgent _agent;
     
     void Awake()
     {
-        _target = transform.position;
+        _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
         UpdateSkin();
     }
 
     void Update()
     {
-        // Screen click input
         if (Input.GetButtonDown("Fire1"))
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out _hit, 100))
-                _target = new Vector3(_hit.point.x, 0, _hit.point.z);
+                _agent.destination = _hit.point;
 
-        _animator.SetBool(CharacterAnimatorParameters.IS_MOVING, _isMoving);
+        var agenteVelocty = _agent?.velocity;
+        var velocity = Mathf.Abs(agenteVelocty?.x?? 0f) + Mathf.Abs(agenteVelocty?.z?? 0f);
+        _animator.SetFloat(CharacterAnimatorParameters.SPEED, velocity);
     }
 
     public void UpdateSkin()
@@ -52,27 +51,6 @@ public class Player : MonoBehaviour
             _meshWoman.SetActive(true);
             _meshMan.SetActive(false);
             _meshWoman.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(materialPath);
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (Vector3.Distance(transform.position, _target) > _minDistanceToMove)
-        {
-            _isMoving = true;
-            transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
-        }
-        else
-        {
-            _isMoving = false;
-        }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer != ((int)Layers.GROUND))
-        {
-            _target = transform.position;
         }
     }
 }

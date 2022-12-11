@@ -29,7 +29,7 @@ public class QueueDoorManager : MonoBehaviour
     public void Reject()
     {
         _characters.Remove(FirstCharacter);
-        Destroy(FirstCharacter);
+        Destroy(FirstCharacter.gameObject);
         FirstCharacter = _characters.AsQueryable().FirstOrDefault();
         UpdatePositions();
     }

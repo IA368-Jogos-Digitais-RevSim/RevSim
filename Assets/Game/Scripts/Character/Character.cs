@@ -14,17 +14,31 @@ public class Character : MonoBehaviour
     [SerializeField] private GameObject _meshParliamentary;
     [SerializeField] private GameObject _meshProgrammer;
     [SerializeField] private GameObject _meshWorker;
-    [SerializeField] private float _minDistanceToMove = 0.5f;
-    [SerializeField] private float _speed = 10;
+    //[SerializeField] private float _minDistanceToMove = 0.5f;
+    //[SerializeField] private float _speed = 10;
 
     [SerializeField] private Classe _classe = Classe.ACTIVIST;
     [SerializeField] private bool _sitting = false;
     
-    [SerializeField] public string Description { get; private set; }
-    [SerializeField] public float CostMoney { get; private set; }
-    [SerializeField] public float PowerGain { get; private set; }
+    [SerializeField] private string _description;
+    [SerializeField] private float _costMoney;
+    [SerializeField] private float _powerGain;
 
-    private bool _isMoving = false;
+    private float _hp = 100;
+    private CharacterStatus _status = CharacterStatus.AVAILABLE;
+
+    public Classe Classe { get { return _classe; } }
+
+    public string Description { get { return _description; } }
+
+    public float CostMoney { get { return _costMoney; } }
+
+    public float PowerGain { get { return _powerGain; } }
+    public float HP { get { return _hp; } }
+    public CharacterStatus Status { get { return _status; } }
+    public Action Action { get; private set; }
+
+    //private bool _isMoving = false;
     private Animator _animator;
     
     void Awake()
@@ -52,6 +66,18 @@ public class Character : MonoBehaviour
         _meshBase.material = Resources.Load<Material>(materialPath);
         
         UpdateCharacterMesh(materialPath);
+    }
+
+    public void StartAction(Action action)
+    {
+        Action = action;
+        _status = CharacterStatus.ON_MISSION;
+    }
+
+    public void EndAction()
+    {
+        Action = null;
+        _status = CharacterStatus.AVAILABLE;
     }
 
     private void UpdateCharacterMesh(string materialPath)

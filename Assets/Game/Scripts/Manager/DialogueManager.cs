@@ -14,6 +14,12 @@ public class DialogueManager : MonoBehaviour
     [Range(1.0f, 100.0f)] [SerializeField] private float _speakingTime;
     [SerializeField] private string _text;
 
+    public string Text 
+    { 
+        get { return _text; } 
+        set { _text = value; }
+    }
+
     private float _waitTime;
     private int _currentpage = 1;
 
