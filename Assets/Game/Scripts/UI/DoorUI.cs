@@ -28,9 +28,11 @@ public class DoorUI : MonoBehaviour
 
     public void Accept()
     {
-        _panel.SetActive(false);
-        _animatorDoor.SetTrigger(ObjectAnimatorParameters.OPEN_DOOR);
-        _queueDoorManager.Accept();
+        if (_queueDoorManager.Accept())
+        {
+            _panel.SetActive(false);
+            _animatorDoor.SetTrigger(ObjectAnimatorParameters.OPEN_DOOR);
+        }
     }
 
     public void Reject()

@@ -18,12 +18,25 @@ public class QueueDoorManager : MonoBehaviour
         FirstCharacter = _characters.AsQueryable().FirstOrDefault();
     }
 
-    public void Accept()
+    public bool Accept()
     {
-        _characters.Remove(FirstCharacter);
-        _membersManager.AddMember(FirstCharacter);
-        FirstCharacter = _characters.AsQueryable().FirstOrDefault();
-        UpdatePositions();
+        if (GameManager.Instance.Money >= FirstCharacter.CostMoney)
+        {
+            GameManager.Instance.Money -= FirstCharacter.CostMoney;
+            GameManager.Instance.PoliticalPower += FirstCharacter.PowerGain;
+
+            _characters.Remove(FirstCharacter);
+            _membersManager.AddMember(FirstCharacter);
+            FirstCharacter = _characters.AsQueryable().FirstOrDefault();
+
+            UpdatePositions();
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void Reject()
