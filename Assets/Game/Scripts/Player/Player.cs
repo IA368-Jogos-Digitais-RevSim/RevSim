@@ -5,6 +5,7 @@ using Skin;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class Player : MonoBehaviour
 {
@@ -13,26 +14,56 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _meshWoman;
 
     private Animator _animator;
-    private bool _isMoving = false;
     private RaycastHit _hit;
     private NavMeshAgent _agent;
-    
+    private AudioSource _audioSource;
+    private bool walking = false;
+
     void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         UpdateSkin();
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
+        {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out _hit, 100))
+            {
                 _agent.destination = _hit.point;
+            }
+        }
 
         var agenteVelocty = _agent?.velocity;
         var velocity = Mathf.Abs(agenteVelocty?.x?? 0f) + Mathf.Abs(agenteVelocty?.z?? 0f);
         _animator.SetFloat(CharacterAnimatorParameters.SPEED, velocity);
+
+        UpdateAudio((int) velocity);
+    }
+
+    //audio (LeoP)
+    private void UpdateAudio(int velox)
+    {
+        if (velox > 0)
+        {
+            walking = true;
+        }
+        else
+        {
+            walking = false;
+        }
+
+        if (!_audioSource.isPlaying && walking)
+        {
+            _audioSource.Play();
+        }
+        else if (_audioSource.isPlaying && !walking)
+        {
+            _audioSource.Stop();
+        }
     }
 
     public void UpdateSkin()
