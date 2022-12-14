@@ -5,6 +5,7 @@ using Skin;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class Player : MonoBehaviour
 {
@@ -13,23 +14,17 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _meshWoman;
 
     private Animator _animator;
-    private bool _isMoving = false;
     private RaycastHit _hit;
     private NavMeshAgent _agent;
-    
-    //audio (LeoP)
-    private AudioSource audioSource;
-    private int velox = 0;
+    private AudioSource _audioSource;
     private bool walking = false;
 
     void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         UpdateSkin();
-
-        //audio (LeoP)
-        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,9 +41,12 @@ public class Player : MonoBehaviour
         var velocity = Mathf.Abs(agenteVelocty?.x?? 0f) + Mathf.Abs(agenteVelocty?.z?? 0f);
         _animator.SetFloat(CharacterAnimatorParameters.SPEED, velocity);
 
-        //audio (LeoP)
-        velox = (int) velocity;
+        UpdateAudio((int) velocity);
+    }
 
+    //audio (LeoP)
+    private void UpdateAudio(int velox)
+    {
         if (velox > 0)
         {
             walking = true;
@@ -58,16 +56,15 @@ public class Player : MonoBehaviour
             walking = false;
         }
 
-        if (!audioSource.isPlaying && walking)
+        if (!_audioSource.isPlaying && walking)
         {
-            audioSource.Play();
+            _audioSource.Play();
         }
-        else if (audioSource.isPlaying && !walking)
+        else if (_audioSource.isPlaying && !walking)
         {
-            audioSource.Stop();
+            _audioSource.Stop();
         }
     }
-
 
     public void UpdateSkin()
     {
